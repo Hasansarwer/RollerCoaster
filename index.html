@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>ZIM - Roller Coaster</title>
+<title>Roller Coaster</title>
 
 <!-- zimjs.com - JavaScript Canvas Framework -->
 <script type=module>
@@ -15,11 +15,23 @@ function ready() {
     
     // given F (Frame), S (Stage), W (width), H (height)
     // put code here
+    const path = new Blob({
+        borderColor: light,
+        borderWidth:3,
+        interactive: false
+    })
+    .sca(3)
+    .center();
+
+    new Circle(20, red).addTo().animate({
+        props: {path: path},
+        time: 5,
+        loop: true,
+        ease: 'linear'
+    })
+        .center()
+        .drag();
     
-    const path = new Bloob({
-        borderColor:dark,
-        borderWidth:3
-    }).center();
         
 } // end ready
 
